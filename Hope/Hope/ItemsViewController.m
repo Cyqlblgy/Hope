@@ -7,10 +7,13 @@
 //
 
 #import "ItemsViewController.h"
+#import "SearchViewController.h"
 
 @interface ItemsViewController ()
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+- (IBAction)segmentedControlAction:(id)sender;
 
 @end
 
@@ -18,7 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_collectionView reloadData];
+     self.navigationController.navigationBarHidden  = NO;
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    self.navigationItem.rightBarButtonItem = [self rightMenuBarButtonItem];
+    
+    [self setTitle:@"Info"];
     // Do any additional setup after loading the view.
 }
 
@@ -27,7 +35,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIBarButtonItem *)rightMenuBarButtonItem {
+    
+    
+    UIImage *image = [UIImage imageNamed:@"Search.png"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    return [[UIBarButtonItem alloc]
+            initWithImage:image style:UIBarButtonItemStylePlain
+            target:self
+            action:@selector(rightSideMenuButtonPressed:)];
+}
 
+
+- (IBAction)rightSideMenuButtonPressed:(id)sender{
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:NO];
+}
+
+- (IBAction)segmentedControlAction:(id)sender{
+    NSLog(@"%d",_segmentedControl.selectedSegmentIndex);
+    if(_segmentedControl.selectedSegmentIndex == 0){
+        [_collectionView reloadData];
+    }
+    
+}
 
 #pragma mark Collection View delegate
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView{

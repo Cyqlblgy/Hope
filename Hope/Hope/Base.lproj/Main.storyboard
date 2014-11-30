@@ -26,7 +26,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyi-4w-l4i" userLabel="Username">
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gyi-4w-l4i" userLabel="Username">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -35,7 +35,7 @@
                                             <rect key="frame" x="43" y="195" width="226" height="45"/>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-qq-8oD" userLabel="Password">
+                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pow-qq-8oD" userLabel="Password">
                                         <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -157,6 +157,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lYl-n4-McU">
+                                <rect key="frame" x="10" y="40" width="300" height="29"/>
+                                <segments>
+                                    <segment title="Children"/>
+                                    <segment title="Youth"/>
+                                    <segment title="Adults"/>
+                                </segments>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="28" y="70" width="270" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="NWc-Ep-Tw1" eventType="valueChanged" id="FNs-ZE-CfN"/>
+                                </connections>
+                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qAk-e6-ip6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,25 +211,13 @@
                                     </collectionViewCell>
                                 </cells>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="8" y="73" width="290" height="487"/>
+                                    <rect key="frame" x="10" y="99" width="290" height="450"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="NWc-Ep-Tw1" id="hpk-Zd-JT2"/>
                                     <outlet property="delegate" destination="NWc-Ep-Tw1" id="BD9-Ih-GYS"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lYl-n4-McU">
-                                <rect key="frame" x="10" y="40" width="300" height="29"/>
-                                <segments>
-                                    <segment title="Children"/>
-                                    <segment title="Youth"/>
-                                    <segment title="Adults"/>
-                                </segments>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="30" y="35" width="270" height="29"/>
-                                </variation>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -236,11 +239,30 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="collectionView" destination="qAk-e6-ip6" id="0YF-tJ-CRS"/>
+                        <outlet property="segmentedControl" destination="lYl-n4-McU" id="h1f-tR-L4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbF-KX-ceL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1558" y="496"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="fYG-Xc-jpE">
+            <objects>
+                <viewController id="Mxk-2W-Qdk" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MVG-re-xdU"/>
+                        <viewControllerLayoutGuide type="bottom" id="o7E-Ex-r4c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DIL-VF-ZId" customClass="SCNView">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvB-nO-0Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2142" y="496"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="STd-uB-9LI">

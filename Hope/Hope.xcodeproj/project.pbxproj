@@ -31,6 +31,7 @@
 		2A3691201A2B9158007411A0 /* 13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3691111A2B9158007411A0 /* 13.jpg */; };
 		2A3691211A2B9158007411A0 /* 14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3691121A2B9158007411A0 /* 14.jpg */; };
 		2A3691221A2B9158007411A0 /* 15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A3691131A2B9158007411A0 /* 15.jpg */; };
+		2A3691251A2BB1C6007411A0 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3691241A2BB1C6007411A0 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		2A3691111A2B9158007411A0 /* 13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 13.jpg; path = ../../../../Downloads/RecipeBookImage/13.jpg; sourceTree = "<group>"; };
 		2A3691121A2B9158007411A0 /* 14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 14.jpg; path = ../../../../Downloads/RecipeBookImage/14.jpg; sourceTree = "<group>"; };
 		2A3691131A2B9158007411A0 /* 15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 15.jpg; path = ../../../../Downloads/RecipeBookImage/15.jpg; sourceTree = "<group>"; };
+		2A3691231A2BB1C6007411A0 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		2A3691241A2BB1C6007411A0 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				2A3690E01A2B6633007411A0 /* Main.storyboard */,
 				2A3691021A2B886B007411A0 /* ItemsViewController.h */,
 				2A3691031A2B886B007411A0 /* ItemsViewController.m */,
+				2A3691231A2BB1C6007411A0 /* SearchViewController.h */,
+				2A3691241A2BB1C6007411A0 /* SearchViewController.m */,
 				2A3690E31A2B6633007411A0 /* Images.xcassets */,
 				2A3690E51A2B6633007411A0 /* LaunchScreen.xib */,
 				2A3690D61A2B6633007411A0 /* Supporting Files */,
@@ -298,6 +303,7 @@
 			files = (
 				2A3690DF1A2B6633007411A0 /* ViewController.m in Sources */,
 				2A3691041A2B886B007411A0 /* ItemsViewController.m in Sources */,
+				2A3691251A2BB1C6007411A0 /* SearchViewController.m in Sources */,
 				2A3690DC1A2B6633007411A0 /* AppDelegate.m in Sources */,
 				2A3690D91A2B6633007411A0 /* main.m in Sources */,
 			);
