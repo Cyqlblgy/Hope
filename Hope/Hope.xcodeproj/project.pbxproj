@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A314EFF1A34B3B700B03419 /* ItemInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A314EFE1A34B3B700B03419 /* ItemInfoViewController.m */; };
+		2A314F091A34BF2900B03419 /* ItemInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A314F081A34BF2900B03419 /* ItemInfoTableViewCell.m */; };
+		2A314F0C1A34CE4000B03419 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A314F0B1A34CE4000B03419 /* SVProgressHUD.bundle */; };
+		2A314F0F1A34CE6800B03419 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A314F0E1A34CE6800B03419 /* SVProgressHUD.m */; };
+		2A314F121A34CEBB00B03419 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A314F111A34CEBB00B03419 /* SVIndefiniteAnimatedView.m */; };
 		2A3690D91A2B6633007411A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3690D81A2B6633007411A0 /* main.m */; };
 		2A3690DC1A2B6633007411A0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3690DB1A2B6633007411A0 /* AppDelegate.m */; };
 		2A3690DF1A2B6633007411A0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3690DE1A2B6633007411A0 /* ViewController.m */; };
@@ -45,6 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A314EFD1A34B3B700B03419 /* ItemInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemInfoViewController.h; sourceTree = "<group>"; };
+		2A314EFE1A34B3B700B03419 /* ItemInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemInfoViewController.m; sourceTree = "<group>"; };
+		2A314F071A34BF2900B03419 /* ItemInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemInfoTableViewCell.h; sourceTree = "<group>"; };
+		2A314F081A34BF2900B03419 /* ItemInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemInfoTableViewCell.m; sourceTree = "<group>"; };
+		2A314F0B1A34CE4000B03419 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		2A314F0D1A34CE6800B03419 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		2A314F0E1A34CE6800B03419 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		2A314F101A34CEBB00B03419 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		2A314F111A34CEBB00B03419 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		2A3690D31A2B6633007411A0 /* Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A3690D71A2B6633007411A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A3690D81A2B6633007411A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,9 +112,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A314F001A34BA8B00B03419 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A314F101A34CEBB00B03419 /* SVIndefiniteAnimatedView.h */,
+				2A314F111A34CEBB00B03419 /* SVIndefiniteAnimatedView.m */,
+				2A314F0D1A34CE6800B03419 /* SVProgressHUD.h */,
+				2A314F0E1A34CE6800B03419 /* SVProgressHUD.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2A314F011A34BAC500B03419 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A314F071A34BF2900B03419 /* ItemInfoTableViewCell.h */,
+				2A314F081A34BF2900B03419 /* ItemInfoTableViewCell.m */,
+			);
+			name = TableCell;
+			sourceTree = "<group>";
+		};
+		2A314F0A1A34CE0800B03419 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A314F0B1A34CE4000B03419 /* SVProgressHUD.bundle */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2A3690CA1A2B6633007411A0 = {
 			isa = PBXGroup;
 			children = (
+				2A314F0A1A34CE0800B03419 /* Frameworks */,
+				2A314F011A34BAC500B03419 /* TableCell */,
+				2A314F001A34BA8B00B03419 /* Model */,
 				2A3690D51A2B6633007411A0 /* Hope */,
 				2A3690EF1A2B6633007411A0 /* HopeTests */,
 				2A3690D41A2B6633007411A0 /* Products */,
@@ -126,6 +171,8 @@
 				2A3690E01A2B6633007411A0 /* Main.storyboard */,
 				2A3691021A2B886B007411A0 /* ItemsViewController.h */,
 				2A3691031A2B886B007411A0 /* ItemsViewController.m */,
+				2A314EFD1A34B3B700B03419 /* ItemInfoViewController.h */,
+				2A314EFE1A34B3B700B03419 /* ItemInfoViewController.m */,
 				2A3691231A2BB1C6007411A0 /* SearchViewController.h */,
 				2A3691241A2BB1C6007411A0 /* SearchViewController.m */,
 				2A3690E31A2B6633007411A0 /* Images.xcassets */,
@@ -265,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A314F0C1A34CE4000B03419 /* SVProgressHUD.bundle in Resources */,
 				2A3691141A2B9158007411A0 /* 1.jpg in Resources */,
 				2A3690E21A2B6633007411A0 /* Main.storyboard in Resources */,
 				2A3690E71A2B6633007411A0 /* LaunchScreen.xib in Resources */,
@@ -302,8 +350,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A3690DF1A2B6633007411A0 /* ViewController.m in Sources */,
+				2A314F0F1A34CE6800B03419 /* SVProgressHUD.m in Sources */,
+				2A314F121A34CEBB00B03419 /* SVIndefiniteAnimatedView.m in Sources */,
+				2A314F091A34BF2900B03419 /* ItemInfoTableViewCell.m in Sources */,
 				2A3691041A2B886B007411A0 /* ItemsViewController.m in Sources */,
 				2A3691251A2BB1C6007411A0 /* SearchViewController.m in Sources */,
+				2A314EFF1A34B3B700B03419 /* ItemInfoViewController.m in Sources */,
 				2A3690DC1A2B6633007411A0 /* AppDelegate.m in Sources */,
 				2A3690D91A2B6633007411A0 /* main.m in Sources */,
 			);
@@ -500,6 +552,7 @@
 				2A3690F81A2B6633007411A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A3690F91A2B6633007411A0 /* Build configuration list for PBXNativeTarget "HopeTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +561,7 @@
 				2A3690FB1A2B6633007411A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

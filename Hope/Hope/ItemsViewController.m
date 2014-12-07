@@ -8,6 +8,7 @@
 
 #import "ItemsViewController.h"
 #import "SearchViewController.h"
+#import "ItemInfoViewController.h"
 
 @interface ItemsViewController ()
 
@@ -25,6 +26,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     self.navigationItem.rightBarButtonItem = [self rightMenuBarButtonItem];
+    self.navigationItem.leftBarButtonItem = [self leftMenBarButtonItem];
     
     [self setTitle:@"Info"];
     // Do any additional setup after loading the view.
@@ -46,14 +48,26 @@
             action:@selector(rightSideMenuButtonPressed:)];
 }
 
+- (UIBarButtonItem *)leftMenBarButtonItem{
+    UIImage *image = [UIImage imageNamed:@"UserInfo"];
+    return [[UIBarButtonItem alloc]
+            initWithImage:image
+            style:UIBarButtonItemStylePlain
+            target:self
+            action:@selector(leftSideMenuButtonPressed:)];
+}
+
 
 - (IBAction)rightSideMenuButtonPressed:(id)sender{
-    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    SearchViewController *searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"searchVC"];
     [self.navigationController pushViewController:searchVC animated:NO];
 }
 
+- (IBAction)leftSideMenuButtonPressed:(id)sender{
+    
+}
+
 - (IBAction)segmentedControlAction:(id)sender{
-    NSLog(@"%d",_segmentedControl.selectedSegmentIndex);
     if(_segmentedControl.selectedSegmentIndex == 0){
         [_collectionView reloadData];
     }
@@ -78,6 +92,12 @@
     [cell.layer setBorderColor:[UIColor grayColor].CGColor];
     [cell.layer setBorderWidth:2.0f];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    ItemInfoViewController *info = [self.storyboard instantiateViewControllerWithIdentifier:@"itemInfoVC"];
+    info.image = [UIImage imageNamed:[NSString stringWithFormat:@"%d.jpg",indexPath.row+1]];
+    [self.navigationController pushViewController:info animated:NO];
 }
 /*
 #pragma mark - Navigation
