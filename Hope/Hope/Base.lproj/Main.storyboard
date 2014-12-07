@@ -258,8 +258,87 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gir-Dr-eGH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BGS-sx-p5C">
+                                        <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="439671600.38508898">
+                                            <!--2014-12-07 19:00:00 +0000-->
+                                        </date>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="310" width="320" height="180"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="dataChanged:" destination="Mxk-2W-Qdk" eventType="valueChanged" id="5Yk-X7-vEN"/>
+                                        </connections>
+                                    </datePicker>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="77X-VZ-jic">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" rowHeight="55" id="dcY-fw-LXT" customClass="SearchCell">
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dcY-fw-LXT" id="GQH-eZ-jft">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tvb-2h-4ls">
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </variation>
+                                                        </imageView>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJ3-ht-kte">
+                                                            <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="55" y="0.0" width="250" height="50"/>
+                                                            </variation>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Mxk-2W-Qdk" id="Adl-71-g2v"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <variation key="default">
+                                                        <mask key="subviews">
+                                                            <exclude reference="Tvb-2h-4ls"/>
+                                                            <exclude reference="PJ3-ht-kte"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="subviews">
+                                                            <include reference="Tvb-2h-4ls"/>
+                                                            <include reference="PJ3-ht-kte"/>
+                                                        </mask>
+                                                    </variation>
+                                                </tableViewCellContentView>
+                                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <connections>
+                                                    <outlet property="imageView" destination="Tvb-2h-4ls" id="yK2-2T-tje"/>
+                                                    <outlet property="textField" destination="PJ3-ht-kte" id="AvA-Xn-bCM"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="10" width="320" height="300"/>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Mxk-2W-Qdk" id="rjs-eR-Zqs"/>
+                                            <outlet property="delegate" destination="Mxk-2W-Qdk" id="4zJ-SD-cht"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="BGS-sx-p5C"/>
+                                        <exclude reference="77X-VZ-jic"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <mask key="subviews">
+                                        <include reference="BGS-sx-p5C"/>
+                                        <include reference="77X-VZ-jic"/>
+                                    </mask>
                                 </variation>
                             </scrollView>
                         </subviews>
@@ -276,6 +355,10 @@
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="datePikcer" destination="BGS-sx-p5C" id="IFN-vo-4uv"/>
+                        <outlet property="tableView" destination="77X-VZ-jic" id="6mf-Xw-eOQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvB-nO-0Sd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,6 +373,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3tp-Kq-fxj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ttj-Yh-YsU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4p-PZ-FpK">
@@ -322,7 +406,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemInfoCell" rowHeight="60" id="5bf-lg-icg" customClass="ItemInfoTableViewCell">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ItemInfoCell" rowHeight="55" id="5bf-lg-icg" customClass="ItemInfoTableViewCell">
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5bf-lg-icg" id="deg-Oz-nyS">
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -330,7 +414,7 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="no7-jP-MWV">
                                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="20" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                             </variation>
                                                         </imageView>
                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1OJ-gb-4AF">
@@ -362,7 +446,7 @@
                                             </tableViewCell>
                                         </prototypes>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="10" y="240" width="300" height="290"/>
+                                            <rect key="frame" x="8" y="242" width="300" height="290"/>
                                         </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="Gcc-U2-BG2" id="7JM-Fr-VYB"/>
